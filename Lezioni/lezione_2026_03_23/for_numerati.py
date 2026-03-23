@@ -24,11 +24,17 @@ lista_input = []  # Creiamo una lista vuota dove metteremo gli input dell'utente
 N_VOTI = 3
 for i in range(N_VOTI):
 
-    # TODO: Controllare che il voto sia tra 18 e 30 compresi con un while
+    while True:
+        # 1. Prendiamo il voto in input -> dentro al while così che venga ripetuto
+        voto = int(input(f"Inserisci il tuo voto numero {i + 1}: "))
 
-    # 1. Prendiamo il voto in input
-    voto = int(input(f"Inserisci il tuo voto numero {i + 1}: "))
-    # 2. Appendiamo (aggiungiamo) il voto alla lista
+        if 18 <= voto <= 30:  # Controlliamo se va bene
+            break   # Se va bene interrompiamo il while
+
+        # Se non abbiamo interrotto il while, spieghiamo all'utente perchè non va bene il voto inserito
+        print("Il voto inserito non è valido (deve essere tra 18 e 30 compresi")
+
+    # 2. Appendiamo (aggiungiamo) il voto alla lista -> fuori dal while così che venga fatto solo una volta PER OGNI VOTO
     lista_input.append(voto)
 
 print(f"Voti inseriti: {lista_input}")
