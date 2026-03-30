@@ -14,7 +14,7 @@ Risorse aggiuntive disponibili sul sito del docente:
 [https://www.projectcherry.it/formazione/python](https://www.projectcherry.it/formazione/python)
 
 Video su Youtube:
-[https://www.youtube.com/watch?v=J3M4ZAVD9y8&list=PLHUQL6-_n9Zes1VLMgJbLa8IIOHT9x4Nu](https://www.youtube.com/watch?v=J3M4ZAVD9y8&list=PLHUQL6-_n9Zes1VLMgJbLa8IIOHT9x4Nu)
+[link](https://www.youtube.com/watch?v=J3M4ZAVD9y8&list=PLHUQL6-_n9Zes1VLMgJbLa8IIOHT9x4Nu)
 ## Contatti
 
 Per domande o chiarimenti: [daniecerri@gmail.com](mailto:daniecerri@gmail.com)
