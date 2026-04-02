@@ -1,3 +1,5 @@
+# Questo è il file PASQUA-HARD, di seguito troverete gli esercizi più difficili
+
 ### Esercizio 1: Il distributore automatico (Il resto esatto)
 
 Stai comprando una merendina alle macchinette. Il programma deve chiedere il costo del prodotto e l'importo inserito (in Euro, ad esempio `1.50` o `2.00`). Se l'importo inserito è maggiore del costo, la macchinetta deve erogare il resto utilizzando il **minor numero possibile di monete**.
