@@ -10,14 +10,21 @@ Ne calcoliamo la media
 """
 
 while True:
-    # TODO per il futuro: controllare anche che siano tutti numeri che si convertano ad interi
     numeri = input("Inserisci i tuoi numeri interi separati da spazi: ")
     if not numeri: # Se numeri è una stringa vuota
         print("Inserisci almeno un numero")
         continue
 
-    # Se l'utente ha inserito qualcosa, assumiamo che vada bene e interrompiamo il while
-    break
+    # Controlliamo che siano tutti numeri convertibili a interi
+    valido = True
+    for pezzo in numeri.split(" "):
+        if not pezzo.lstrip("-").isdigit():
+            print(f"'{pezzo}' non è un numero intero valido")
+            valido = False
+            break
+
+    if valido:
+        break
 
 # 1. Splittiamo la stringa in base agli spazi
 lista_numeri_str = numeri.split(" ")
