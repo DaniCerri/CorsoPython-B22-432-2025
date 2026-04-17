@@ -90,11 +90,22 @@ def adatta_ricetta(ricetta_completa: list, obiettivo: int):
     ricetta_adattata = [
         nome_ricetta,
         lista_ingredienti,
-        persone_riferimento
+        obiettivo  # Salviamo nella ricetta adattata il nuovo numero di persone
     ]
 
     return ricetta_adattata
 
+def stampa_linea(linea_ingrediente: tuple):
+    linea = f"  * {linea_ingrediente[0].capitalize()}: {linea_ingrediente[1]} {linea_ingrediente[2]}"
+    return linea
+
+def stampa_ricetta(ricetta: list):
+    output = "=" * 10 + f" {ricetta[0].upper()} " + "=" * 10 + "\n"  # Intestazione ricetta
+    output += f"Per {ricetta[2]} persone\n"
+    for linea in ricetta[1]:  # Per ogni linea ingrediente nella nostra ricetta
+        # usiamo la funzione di prima e la aggiungiamo all'output
+        output += f"{stampa_linea(linea)}\n"
+    print(output)
 
 if __name__ == "__main__":
     ricetta = [
@@ -109,4 +120,9 @@ if __name__ == "__main__":
         4   # Numero di persone di riferimento
     ]
 
-    print(adatta_ricetta(ricetta, 10))
+    # usiamo le funzioni
+    stampa_ricetta(ricetta)  # Stampiamo la ricetta originale
+    print()
+    ricetta_adattata = adatta_ricetta(ricetta, 10) # Adattiamo la ricetta per 10 persone
+    stampa_ricetta(ricetta_adattata)  # Stampiamo la ricetta modificata
+
