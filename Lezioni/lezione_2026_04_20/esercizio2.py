@@ -21,13 +21,15 @@ with open("lorem.txt") as file_in:
 
 # 2. Leggere tutto il file e poi dire: numero parole, numero frasi e dizionario di frequenza parole
 with open("lorem.txt") as file_in:
-    righe = file_in.readlines()
+    righe = file_in.read()
 
-# TODO: questo codice calcola le cose per ogni riga, noi invece vogliamo per tutto il testo
-#  Si può unire le righe o leggerle diversamente
-for riga in righe:
-    parole = es1.conta_parole(riga)  # TODO: eliminare anche da qui le parole vuote -> ""
-    frasi = es1.conta_frasi(riga)
-    diz_freq = es1.frequenza_parole(riga)
+# righe = "".join(riga for riga in righe)
+# print(righe)
 
+# for riga in righe:
+parole = es1.conta_parole(righe)  # TODO: eliminare anche da qui le parole vuote -> ""
+frasi = es1.conta_frasi(righe)
+diz_freq = es1.frequenza_parole(righe)
+
+print(f"Totale | Parole: {parole}, Frasi: {frasi}, Frequenza: {diz_freq}")
 
