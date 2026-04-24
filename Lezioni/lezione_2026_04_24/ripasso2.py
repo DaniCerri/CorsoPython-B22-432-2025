@@ -61,20 +61,71 @@ con tutte le possibili coppie (prodotto cartesiano)
 [
     (1, 4), (1, 5), (1, 6),
     (2, 4), (2, 5), (2, 6),
-    (3, 4), (3, 5), (3, 6)
+    (3, 4), (3, 5), (3, 6),
 ]
 """
 def prodotto_cartesiano(lista1: list, lista2: list):
-    prodotto = ()
+    prodotto = []  # Errore: prodotto deve essere una lista
     for elem1 in lista1:
         for elem2 in lista2:
-            prodotto += (elem1, elem2)
+            prodotto.append([elem1, elem2])
 
-    for elem2 in lista2:
-        for elem1 in lista1:
-            prodotto += (elem2, elem1)
+    # Errore: il secondo for non serve. Basta il primo.
 
-    return lista1, lista2
+    return prodotto  # Errore: dobbiamo restituire prodotto e non gli input
+
+"""
+Facciamo una funzione che dato un dizionario fatto come segue, 
+restituisce un dizionario con le stesse chiavi ma con le medie come valori.
+
+diz_esempio = {
+    "temperature": [1, 2, 3, 4, 5, 6],
+    "umidità": [1, 3, 3, 4, 9, 6],
+    "pressione": [1, 2, 2, 2, 5, 6],
+}
+
+risultato = {
+    "temperature": 3.5,
+    "umidità": a.b,
+    "pressione": c.d,
+}
+"""
+def dizionario_medie (dizionario : dict):
+    dizionario_out = {}
+    for chiave, valore in dizionario:
+        media = sum(valore) / len(valore)
+        dizionario_out[chiave] = media
+    return dizionario_out
+
+"""
+Facciamo una funzione che data una lista di numeri ci dica qual è 
+la differenza massima
+"""
+def differenza_numeri(lista: list[float | int]):
+    valore_minimo = min(lista)
+    valore_massimo = max(lista)
+    differenza_totale = valore_massimo - valore_minimo
+    return differenza_totale
+
+"""
+Facciamo una funzione che prenda una lista numeri e restituisca una lista
+di flag True o False se sono o meno quadrati perfetti
+
+es: lista = [1, 5, 10, 25, 64] -> [True, False, False, True, True]
+            [1*1->1, /, /, 5*5->25, 8*8->64]
+"""
+def quadrati_perfetti(lista_numeri: list[int]):
+    lista_flag = []
+    for n in lista_numeri:
+        radice = n ** 0.5
+        # if radice == int(radice):
+        #     lista_flag.append(True)
+        # else:
+        #     lista_flag.append(False)
+        lista_flag.append(radice == int(radice))
+    return lista_flag
+
+
 
 
 
